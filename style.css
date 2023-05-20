@@ -1,0 +1,305 @@
+/* Setting Up CSS */
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Scrollbar for FireFox */
+    scrollbar-width: thin; 
+    scrollbar-color: #35ff00 #003329;
+    scroll-behavior: smooth;
+}
+body{
+    background: #000000;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+/* Scrollbar For other browsers */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the entire scrollbar */
+}
+::-webkit-scrollbar-track {
+    background: #003329; /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #35ff00;
+    border-radius: 20px; 
+    border: 3px solid #003329; 
+}
+
+
+/* H O M E   S E C T I O N */
+/* Navigation Bar */
+#home{
+    height: 100dvh;
+    background: #e5eae9;
+}
+nav{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+#brand {
+    margin: 0%;
+    padding: 0%;
+}
+#brand ul{
+    display: flex;
+}
+#brand ul li{
+    list-style: none;
+    letter-spacing: 6px;
+    text-shadow: none;
+    animation: glowing 3s infinite linear;
+}
+@keyframes glowing {
+    0%, 100% {
+        color: #484848;
+        text-shadow: none;
+    }
+    50% {
+        color: #359381;
+        text-shadow:  0 0 20px #35ff00, 0 0 7px #359381, 0 0 20px #35ff00;
+    }
+}
+nav ul {
+    display: flex;
+    justify-content:flex-start;
+    width: 75%;
+    align-items: center;
+}
+nav ul li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #359381;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+nav ul li a:hover{
+    background: #359381;
+    color: #fff;
+}
+    /* Parallex CSS */
+.parallex{
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title{
+    position: absolute;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.parallex img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+/* A B O U T   S E C T I O N */
+#about{
+    position: relative;
+    background: linear-gradient(#003329, #00231c);
+    padding: 100px;
+    height: 100dvh;
+}
+#about h2{
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+#about p{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+#about img{
+    border-radius: 20px;
+}
+#about a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* S E R V I C E S   S E C T I O N */
+#services h2{
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+#services{
+    position: relative;
+    background: linear-gradient(#00231c, #001410);
+    padding: 100px;
+    height: 100dvh;
+}
+#services .service-item{
+    background: #e5eae9;
+    border: 1px solid #e5eae9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#services .service-item:hover{
+    background: #003329;
+    border: 1px solid #359381;
+    color: #fff;
+}
+#services .service-item:hover i{
+color: #fff !important;
+}
+#services .service-item:hover .itemIcon{
+    background: #359381;
+}
+
+#services .service-item .itemIcon{
+    width: 5rem;
+    height: 5rem;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #359381;
+    background: #003329;
+    border-radius: 50%;
+}
+#services .service-item p{
+    font-size: 1em;
+    font-weight: 300;
+}
+
+
+/* P O R T F O L I O   S E C T I O N */
+#portfolio{
+    position: relative;
+    background: linear-gradient(#001410,#000000);
+    color: #fff;
+    height: 100dvh;
+}
+#portfolio h2{
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 50px;
+}
+#portfolio .portBody{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#portfolio .rotMenu{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#portfolio .rotMenu li{
+    position: absolute;
+    left: 0%;
+    list-style: none;
+    transform-origin: 12.5rem ;
+    transition: 0.75s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(10rem) ;
+}
+#portfolio .rotMenu li:hover a{
+    background: #000000;
+    color: #e5eae9;
+    border: 1px solid #35ff00;
+}
+#portfolio .rotMenu.active li{
+    transform: rotate(calc(360deg / 7 * var(--i))) ;
+}
+#portfolio .rotMenu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #003329;
+    background: #e5eae9;
+    border: 1px solid #e5eae9;
+    text-decoration: none;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    font-size: 2em;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -7 * var(--i))) ;
+}
+#portfolio .rotMenu .menuToggle{
+    position: absolute;
+    background: #e5eae9;
+    width: 120px;
+    height: 120px;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 1.25s;
+}
+#portfolio .rotMenu .menuToggle{
+    animation: glowPlus 3s infinite linear;
+}
+@keyframes glowPlus{
+    0%, 100% {
+        color: #484848;
+        text-shadow: none;
+    }
+    50% {
+        color: #ff0000;
+        text-shadow:  0 0 20px #933550, 0 0 7px #ff3500, 0 0 20px #933550;
+    }
+}
+#portfolio .rotMenu.active .menuToggle{
+    transform: rotate(315deg);
+    animation: glowPlusActive 3s infinite linear;
+}
+@keyframes glowPlusActive {
+    0%, 100% {
+        color: #484848;
+        text-shadow: none;
+    }
+    50% {
+        color: #359381;
+        text-shadow:  0 0 20px #359381, 0 0 7px #35ff00, 0 0 20px #359381;
+    }
+}
+
+/* C O N T A C T   S E C T I O N */
+#contact{
+    position: relative;
+    padding: 100px;
+    background: #000000 !important;
+    color: #fff;
+    height: 100dvh;
+}
